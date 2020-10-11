@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Article preview component</title>
+
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="d-flex justify-content-center align-items-center">
+
+
+  <div class="card d-flex justify-content-space-between">
+    <div class="left">
+      <!-- image -->
+      <img src="images/drawers.jpg" alt="image">
+    </div>
+    <div class="right">
+      <!-- Text -->
+      <h2 class="title"> Shift the overall look and feel by adding these wonderful
+        touches to furniture in your home</h2>
+
+      <p class="description"> Ever been in a room and felt like something was missing? Perhaps
+        it felt slightly bare and uninviting. I’ve got some simple tips
+        to help you make any room feel complete.
+      </p>
+
+      <div class="card-end d-flex justify-content-space-between align-items-center m-t-20">
+        <div class="perfil">
+          <img class="avatar" src="./images/avatar.jpg" alt="avatar">
+          <div class="name">
+            <p>José Andrés | 4ndresdev</p>
+            <small class="date">14 nov 1996</small>
+          </div>
+        </div>
+        <div id="share" class="share d-flex justify-content-center align-items-center">
+          <div id="social" class="social">
+            <p class="m-0">SHARE</p>
+            <a href="https://www.facebook.com/andres.beltranruiz.5/" target="_blank"><img src="images/icon-facebook.svg"
+                alt="icon-facebook"></a>
+            <a href="https://twitter.com/4ndresdev" target="_blank"><img src="images/icon-twitter.svg"
+                alt="icon-twitter"></a>
+            <a href="https://www.pinterest.com.mx/andresbeltranruiz/_saved/" target="_blank"><img
+                src="images/icon-pinterest.svg" alt="icon-pinterest"></a>
+          </div>
+          <img src="images/icon-share.svg" alt="share">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.onload = function () {
+
+      var social = document.getElementById('social');
+
+      document.getElementById('share').addEventListener('mouseover', function () {
+        social.classList.add('active');
+      });
+
+      document.getElementById('share').addEventListener('mouseout', function () {
+        social.classList.remove('active');
+      });
+    }
+  </script>
+</body>
+
+</html>

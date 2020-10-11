@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Manrope', sans-serif;
+}
+
+:root {
+    --dark_blue: hsl(217, 19%, 35%);
+    --desaturated_Dark: hsl(214, 17%, 51%);
+    --grayish_Blue: hsl(212, 23%, 69%);
+    --light_Blue: hsl(210, 46%, 95%);
+}
+
+/* Start Helpers */
+.m-0 {
+    margin: 0;
+}
+
+.m-t-5 {
+    margin-top: 5px;
+}
+
+.m-t-10 {
+    margin-top: 10px;
+}
+
+.m-t-15 {
+    margin-top: 15px;
+}
+
+.m-t-20 {
+    margin-top: 20px;
+}
+
+.bor {
+    border: 1px solid;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.justify-content-space-between {
+    justify-content: space-between;
+}
+
+/* End Helpers */
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: hsl(210, 46%, 95%);
+}
+
+.card {
+    width: 750px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 10px 50px -5px rgba(0, 0, 0, 0.2);
+    margin: 15px;
+}
+
+.card .left {
+    width: 40%;
+    height: auto;
+}
+
+.card .right {
+    width: 60%;
+    height: auto;
+    padding: 35px;
+    box-sizing: border-box;
+}
+
+.card .left img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--dark_blue);
+}
+
+.description {
+    font-size: 13px;
+    margin-top: 10px;
+    color: var(--desaturated_Dark);
+}
+
+.card-end {
+    width: 100%;
+}
+
+.card-end .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.card-end .perfil {
+    display: flex;
+    align-items: center;
+}
+
+.card-end .name {
+    margin-left: 10px;
+}
+
+.card-end .name p {
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--dark_blue);
+}
+
+.card-end .name small {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--grayish_Blue);
+}
+
+.card-end .share {
+    width: 35px;
+    height: 35px;
+    background-color: var(--light_Blue);
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+}
+
+.card-end .share .social {
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: var(--dark_blue);
+    position: absolute;
+    transform: translateY(-50px);
+    display: none;
+    align-items: center;
+}
+
+.card-end .share .social.active {
+    animation: fadeIn;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-direction: alternate;
+    -moz-animation: fadeIn;
+    -moz-animation-duration: 0.5s;
+    -moz-animation-fill-mode: forwards;
+    -moz-animation-direction: alternate;
+    -webkit-animation: fadeIn;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-direction: alternate;
+    display: flex;
+}
+
+.card-end .share .social::after {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    top: 42px;
+    left: 45%;
+    border-top: 12px solid var(--dark_blue);
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-left: 12px solid transparent;
+}
+
+.share .social p {
+    color: white;
+    font-weight: lighter !important;
+    letter-spacing: 3px;
+    opacity: 0.5;
+    font-size: 10px;
+}
+
+.share .social img {
+    margin: 0 10px;
+}
+
+
+/* Responsive design */
+
+@media screen and (max-width: 700px) {
+    .card {
+        flex-direction: column;
+    }
+
+    .card .left {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card .left img {
+        width: 100%;
+        height: auto;
+    }
+
+    .card .right {
+        width: 100%;
+    }
+
+    .card-end .share .social {
+        flex-direction: column;
+    }
+
+    .share .social img {
+        margin: 7px 0;
+    }
+
+    .card-end .share .social::after {
+        display: none;
+    }
+
+
+}
+
+/* Animations */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(50);
+    }
+}
